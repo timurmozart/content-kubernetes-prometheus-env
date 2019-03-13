@@ -15,7 +15,7 @@ namespace.yml
 
 Apply the namesapce:
 
- kubectl apply -f namespace.yml
+ # kubectl apply -f namespace.yml
  
 File called clusterRole.yml. This will be used to set up the cluster's roles.
 clusterRole.yml:
