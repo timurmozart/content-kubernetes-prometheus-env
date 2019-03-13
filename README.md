@@ -15,32 +15,33 @@ namespace.yml
 
 Apply the namesapce:
 
- # kubectl apply -f namespace.yml
+__kubectl apply -f namespace.yml__
  
 File called clusterRole.yml. This will be used to set up the cluster's roles.
 clusterRole.yml:
 
 Apply the cluster roles to the Kubernetes cluster:
 
-kubectl apply -f clusterRole.yml
+__kubectl apply -f clusterRole.yml__
 
 File called config-map.yml. Kubernetes will use this file to manage the prometheus.yml configuration file.
 config-map.yml:
 
 Apply the ConfigMap:
 
-kubectl apply -f config-map.yml
+__kubectl apply -f config-map.yml__
+
 File called prometheus-deployment.yml. This file will be used to create the Prometheus deployment; which will include the pods, replica sets and volumes.
 prometheus-deployment.yml
 
 Deploy the Prometheus environment:
 
-kubectl apply -f prometheus-deployment.yml
+__kubectl apply -f prometheus-deployment.yml__
 
 Finally, we will finish off the Prometheus environment by creating a server to make publicly accessible. Create prometheus-service.yml.
 prometheus-service.yml:
 
-kubectl apply -f prometheus-service.yml
+__kubectl apply -f prometheus-service.yml__
 
 Create the clusterRole.yml file to set up access so Prometheus can access metrics using Service Discovery.
 clusterRole.yml:
