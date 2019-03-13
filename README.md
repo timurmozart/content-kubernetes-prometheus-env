@@ -67,7 +67,9 @@ __kubectl apply -f grafana-service.yml__
 NodeExporter
 
 Repeat these steps on both your master and worker nodes.
+
 Create the Prometheus user:
+
 __adduser prometheus__
 Download Node Exporter:
 __cd /home/prometheus__
@@ -77,7 +79,9 @@ __mv node_exporter-0.16.0.linux-amd64 node_exporter__
 __cd node_exporter__
 __chown prometheus:prometheus node_exporter__
 __vi /etc/systemd/system/node_exporter.service__
+
 /etc/systemd/system/node_exporter.service:
+
 [Unit]
 Description=Node Exporter
 
