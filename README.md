@@ -70,43 +70,6 @@ Repeat these steps on both your master and worker nodes.
 
 Create the Prometheus user:
 
-__adduser prometheus__
-Download Node Exporter:
-__cd /home/prometheus__
-__curl -LO "https://github.com/prometheus/node_exporter/releases/download/v0.16.0/node_exporter-0.16.0.linux-amd64.tar.gz"__
-__tar -xvzf node_exporter-0.16.0.linux-amd64.tar.gz__
-__mv node_exporter-0.16.0.linux-amd64 node_exporter__
-__cd node_exporter__
-__chown prometheus:prometheus node_exporter__
-__vi /etc/systemd/system/node_exporter.service__
-
-/etc/systemd/system/node_exporter.service:
-
-[Unit]
-Description=Node Exporter
-
-[Service]
-User=prometheus
-ExecStart=/home/prometheus/node_exporter/node_exporter
-
-[Install]
-WantedBy=default.target
-Reload systemd:
-__systemctl daemon-reload__
-Enable the node_exporter service:
-__systemctl enable node_exporter.service__
-Start the node_exporter service:
-__systemctl start node_exporter.service__
-Add the following to config-map.yaml:
-      - job_name: 'node_exporter'
-        static_configs:
-        - targets: ['<KUBER_MASTER_PRIVATE_IP>:9100', <UBER_WORKER_PRIVATE_IP>:9100]
-
-
-Repeat these steps on both your master and worker nodes.
-
-Create the Prometheus user:
-
 adduser prometheus
 Download Node Exporter:
 
