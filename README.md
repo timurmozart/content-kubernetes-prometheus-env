@@ -29,7 +29,7 @@ config-map.yml:
 
 Apply the ConfigMap:
 
-__kubectl apply -f config-map.yml__
+__kubectl apply -f prometheus-config-map.yml__
 
 File called prometheus-deployment.yml. This file will be used to create the Prometheus deployment; which will include the pods, replica sets and volumes.
 prometheus-deployment.yml
@@ -51,6 +51,6 @@ __kubectl apply -f clusterRole.yml__
 Crate the Kube State Metrics pod to get access to metrics on the Kubernetes API:
 kube-state-metrics.yml:
 
-kubectl apply -f prometheus-service.yml
+kubectl apply -f __kube-state-metrics.yml__
 
 Access the prometheus service with the  NodePort you specified in manifest: 
