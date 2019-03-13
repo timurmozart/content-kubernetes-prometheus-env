@@ -54,3 +54,11 @@ kube-state-metrics.yml:
 kubectl apply -f __kube-state-metrics.yml__
 
 Access the prometheus service with the  NodePort you specified in manifest: 
+
+Deploy Grafana:
+
+kubectl apply -f grafana-deployment.yml
+
+Create the Grafana service:
+
+kubectl apply -f grafana-service.yml
