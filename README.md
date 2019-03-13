@@ -46,7 +46,7 @@ __kubectl apply -f prometheus-service.yml__
 Create the clusterRole.yml file to set up access so Prometheus can access metrics using Service Discovery.
 clusterRole.yml:
 
-kubectl apply -f prometheus-service.yml
+__kubectl apply -f clusterRole.yml__
 
 Crate the Kube State Metrics pod to get access to metrics on the Kubernetes API:
 kube-state-metrics.yml:
